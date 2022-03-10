@@ -47,7 +47,7 @@ async def mizuki(client, message):
     except:
         return
     test = text
-    if not "en" in lan and not lan == "":
+    if "en" not in lan and lan != "":
         try:
             test = translator.translate(test, lang_tgt="en")
         except:
@@ -59,7 +59,7 @@ async def mizuki(client, message):
     except Exception as e:
         await m.edit(str(e))
         return
-    if not "en" in lan and not lan == "":
+    if "en" not in lan and lan != "":
         msg = translator.translate(msg, lang_tgt=lan[0])
     try:
         await bot.send_chat_action(message.chat.id, "typing")
